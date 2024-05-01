@@ -42,69 +42,44 @@ public class manageflight extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        s = new javax.swing.JTextField();
         fc = new javax.swing.JTextField();
-        nos = new javax.swing.JTextField();
+        s = new javax.swing.JTextField();
         d = new javax.swing.JTextField();
         tof = new javax.swing.JTextField();
+        nos = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Flight");
 
-        jLabel2.setText("Flight code");
+        jLabel2.setText("Flight Code");
 
         jLabel3.setText("Source");
 
         jLabel4.setText("Destination");
 
-        jLabel5.setText("Take off");
+        jLabel5.setText("Take of");
 
-        jLabel6.setText("Occupied seats");
+        jLabel6.setText("No of Seats");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "FlightCode", "Source", "Destination", "Take Off", "NoOfSeats"
+                "FlightCode", "Source", "Destination", "Take off", "NoofSeats"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
-
-        s.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sActionPerformed(evt);
-            }
-        });
-
-        fc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fcActionPerformed(evt);
-            }
-        });
-
-        nos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nosActionPerformed(evt);
-            }
-        });
-
-        d.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dActionPerformed(evt);
-            }
-        });
-
-        tof.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tofActionPerformed(evt);
-            }
-        });
 
         jButton1.setText("INSERT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +89,11 @@ public class manageflight extends javax.swing.JFrame {
         });
 
         jButton2.setText("UPDATE");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("SEARCH");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +103,18 @@ public class manageflight extends javax.swing.JFrame {
         });
 
         jButton4.setText("DELETE");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("<- BACK");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,141 +123,188 @@ public class manageflight extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(279, 279, 279)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel2)
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel3)
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel4)
+                                .addGap(72, 72, 72))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(fc, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(51, 51, 51)
-                                        .addComponent(jLabel3))
+                                        .addComponent(jButton1)
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jButton2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(fc, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(70, 70, 70)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tof, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nos)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                                        .addComponent(s)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel5)
+                                .addGap(80, 80, 80)
+                                .addComponent(jLabel6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tof, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(nos, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton3)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton4)))
+                        .addGap(103, 103, 103))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                    .addComponent(tof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addGap(72, 72, 72)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sActionPerformed
-
-    private void fcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fcActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fcActionPerformed
-
-    private void nosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nosActionPerformed
-
-    private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dActionPerformed
-
-    private void tofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tofActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tofActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
-            String sql = "Insert into manageflight values (?,?,?,?,?)";
-            PreparedStatement ptst = con.prepareStatement(sql);
-            ptst.setString(1, fc.getText());
-            ptst.setString(2, s.getText());
-            ptst.setString(3, d.getText());
-            ptst.setString(4, tof.getText());
-            ptst.setString(5, nos.getText());
-            ptst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Data inserted successfully!");
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
+try{
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+String sql = "insert into manageflight values (?,?,?,?,?)";
+PreparedStatement ptst= con.prepareStatement(sql);
+ptst.setString(1,fc.getText());
+ptst.setString(2,s.getText());
+ptst.setString(3,d.getText());
+ptst.setString(4,tof.getText());
+ptst.setString(5,nos.getText());
+ptst.executeUpdate();
+JOptionPane.showMessageDialog(this, "Data inserted Succesfully!");
+con.close();
+}
+catch(Exception e){
+}
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
-            Statement st = con.createStatement();
-            String sql = "SELECT * from manageflight";
-            PreparedStatement ptst = con.prepareStatement(sql);
-            ResultSet rs = ptst.executeQuery();
-            DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
-            dt.setRowCount(0);
-            while (rs.next()) {
-                Object o[] = {rs.getString("flightcode"), rs.getString("source"), rs.getString("destination"), rs.getString("takeoff"), rs.getString("noofseat")};
-                dt.addRow(o);
-            }
+try{
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+Statement st = con.createStatement();
+String sql ="SELECT * from manageflight";
+PreparedStatement ptst= con.prepareStatement(sql);
+ResultSet rs= ptst.executeQuery();
+DefaultTableModel dt= (DefaultTableModel)jTable1.getModel();
+dt.setRowCount(0);
+while(rs.next()){
+Object o[]= {rs.getString("flightcode"),rs.getString("source"),rs.getString("destination"),rs.getString("takeoff"),rs.getString("noofseat")};
+dt.addRow(o);
+}
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
+}
+catch(Exception e){
+JOptionPane.showMessageDialog(this, e);
+}
+
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+try{
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+Statement st = con.createStatement();
+
+String id= fc.getText();
+String sql = "DELETE FROM `manageflight` WHERE flightcode='"+id+"'";
+PreparedStatement ptst = con.prepareStatement(sql);
+ptst.executeUpdate();
+JOptionPane.showMessageDialog(this, "Data deleted succsessfully");
+con.close();
+
+}
+catch(Exception e){
+JOptionPane.showMessageDialog(this, e);
+}
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+try{
+String id=fc.getText();
+String source=s.getText();
+String des=d.getText();
+String tak=tof.getText();
+String noofseat=nos.getText();
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+
+String sql= "UPDATE `manageflight` SET `source`='"+source+"',`destination`='"+des+"',`takeoff`='"+tak+"',`noofseat`='"+noofseat+"'";
+PreparedStatement ptst = con.prepareStatement(sql);
+ptst.execute();
+
+JOptionPane.showMessageDialog(this, "Record Updated!");
+
+}
+catch(Exception e){
+JOptionPane.showMessageDialog(this, e);
+}
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+dashboard obj =new dashboard();
+obj.setVisible(true);
+dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -315,6 +354,7 @@ public class manageflight extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField nos;
