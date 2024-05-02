@@ -58,7 +58,7 @@ public class managepassenger extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Passenger");
 
-        jLabel2.setText("Passenger Name:");
+        jLabel2.setText("Passenger Name");
 
         jLabel3.setText("Gender");
 
@@ -68,7 +68,9 @@ public class managepassenger extends javax.swing.JFrame {
 
         jLabel6.setText("Phone");
 
-        jLabel7.setText("<BACK");
+        jLabel7.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel7.setText("    BACK");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -86,8 +88,10 @@ public class managepassenger extends javax.swing.JFrame {
                 "PassengerName", "Gender", "Nationality", "Passportnumber", "Phone"
             }
         ));
+        jTable1.setSelectionBackground(new java.awt.Color(102, 255, 204));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("INSERT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +99,7 @@ public class managepassenger extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 204));
         jButton2.setText("UPDATE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +107,7 @@ public class managepassenger extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setText("SEARCH");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +115,7 @@ public class managepassenger extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(204, 204, 255));
         jButton4.setText("DELETE");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,24 +130,11 @@ public class managepassenger extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel7))
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(pn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(g, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(n, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ph, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(43, 43, 43)
@@ -148,11 +142,25 @@ public class managepassenger extends javax.swing.JFrame {
                                         .addGap(56, 56, 56)
                                         .addComponent(jLabel4)
                                         .addGap(47, 47, 47)
-                                        .addComponent(jLabel5)))
-                                .addGap(54, 54, 54)
-                                .addComponent(jLabel6)))
-                        .addGap(0, 29, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                                        .addComponent(jLabel5))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(38, 38, 38)))
+                                .addGap(45, 45, 45)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(g, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(n, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ph, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 17, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(85, 85, 85)
@@ -171,7 +179,7 @@ public class managepassenger extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -202,25 +210,36 @@ public class managepassenger extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+try {
+    // Check for empty fields
+    if (pn.getText().isEmpty() || g.getText().isEmpty() || n.getText().isEmpty() || pass.getText().isEmpty() || ph.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields", "Form Validation Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-try{
-Class.forName("com.mysql.cj.jdbc.Driver");
+    // Validate phone number format (assuming it's a numeric field)
+    if (!ph.getText().matches("\\d+")) {
+        JOptionPane.showMessageDialog(this, "Invalid phone number", "Form Validation Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
-String sql = "insert into managepassenger values (?,?,?,?,?)";
-PreparedStatement ptst= con.prepareStatement(sql);
-ptst.setString(1,pn.getText());
-ptst.setString(2,g.getText());
-ptst.setString(3,n.getText());
-ptst.setString(4,pass.getText());
-ptst.setString(5,ph.getText());
-ptst.executeUpdate();
-JOptionPane.showMessageDialog(this, "Data inserted Succesfully!");
-con.close();
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+    String sql = "insert into managepassenger values (?,?,?,?,?)";
+    PreparedStatement ptst = con.prepareStatement(sql);
+    ptst.setString(1, pn.getText());
+    ptst.setString(2, g.getText());
+    ptst.setString(3, n.getText());
+    ptst.setString(4, pass.getText());
+    ptst.setString(5, ph.getText());
+    ptst.executeUpdate();
+    JOptionPane.showMessageDialog(this, "Data inserted successfully!");
+    con.close();
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+    e.printStackTrace();
 }
-catch(Exception e){
-JOptionPane.showMessageDialog(null, e);
-}
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -251,44 +270,68 @@ JOptionPane.showMessageDialog(this, e);
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
 
-try{
-Class.forName("com.mysql.cj.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
-Statement st = con.createStatement();
-String sql ="SELECT * from managepassenger";
-PreparedStatement ptst= con.prepareStatement(sql);
-ResultSet rs= ptst.executeQuery();
-DefaultTableModel dt= (DefaultTableModel)jTable1.getModel();
-dt.setRowCount(0);
-while(rs.next()){
-Object o[]= {rs.getString("name"),rs.getString("gender"),rs.getString("nationality"),rs.getString("passportnumber"),rs.getString("phone")};
-dt.addRow(o);
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+
+    String passport = pass.getText();
+    if (passport.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter a passport number to search", "Validation Error", JOptionPane.ERROR_MESSAGE);
+        return; // Exit the method if passport number is empty
+    }
+
+    String sql = "SELECT * FROM managepassenger WHERE passportnumber = ?";
+    PreparedStatement ptst = con.prepareStatement(sql);
+    ptst.setString(1, passport);
+
+    ResultSet rs = ptst.executeQuery();
+    DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
+    dt.setRowCount(0);
+
+    if (!rs.next()) {
+        JOptionPane.showMessageDialog(this, "No passenger found for the specified passport number", "Search Result", JOptionPane.INFORMATION_MESSAGE);
+    } else {
+        do {
+            Object[] o = {rs.getString("name"), rs.getString("gender"), rs.getString("nationality"), rs.getString("passportnumber"), rs.getString("phone")};
+            dt.addRow(o);
+        } while (rs.next());
+    }
+
+    con.close();
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "An unexpected error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    e.printStackTrace();
 }
 
-}
-catch(Exception e){
-JOptionPane.showMessageDialog(this, e);
-}
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-try{
-Class.forName("com.mysql.cj.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
-Statement st = con.createStatement();
-
-String phone= ph.getText();
-String sql = "DELETE FROM `managepassenger` WHERE phone='"+phone+"'";
-PreparedStatement ptst = con.prepareStatement(sql);
-ptst.executeUpdate();
-JOptionPane.showMessageDialog(this, "Data deleted succsessfully");
-con.close();
-
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ams", "root", "");
+    
+    String passport = pass.getText();
+    if (!passport.isEmpty()) {
+        String sql = "DELETE FROM managepassenger WHERE passportnumber = ?";
+        PreparedStatement ptst = con.prepareStatement(sql);
+        ptst.setString(1, passport);
+        int rowsAffected = ptst.executeUpdate(); 
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(this, "Data deleted successfully");
+        } else {
+            JOptionPane.showMessageDialog(this, "No matching record found for the specified passport number");
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Please specify a passport number");
+    }
+    
+    con.close();
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "An error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    e.printStackTrace(); // Print stack trace for detailed error information
 }
-catch(Exception e){
-JOptionPane.showMessageDialog(this, e);
-}
+
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
